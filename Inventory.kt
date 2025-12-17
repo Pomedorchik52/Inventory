@@ -61,7 +61,6 @@ class Inventory(val maxWeight: Int = 50) {
         println("Цена: ${item.price}")
     }
 
-    // Новый метод: выбросить предмет в сундук
     fun dropItem(item: Item, chest: Chest): Boolean {
         if (removeItem(item)) {
             chest.addItem(item)
@@ -72,13 +71,11 @@ class Inventory(val maxWeight: Int = 50) {
     }
 }
 
-// Простой "мировой" сундук
 class Chest {
     private val items: MutableList<Item> = mutableListOf()
 
     fun addItem(item: Item) {
         items.add(item)
-        // Без сообщения, чтобы не спамить
     }
 
     fun printChest() {
@@ -91,4 +88,5 @@ class Chest {
             println("- ${item.name} (ID: ${item.id})")
         }
     }
+
 }
